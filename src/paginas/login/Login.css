@@ -1,0 +1,17 @@
+.text-decoreted-none{
+    
+    text-decoration:none;
+
+}
+.texto2{
+    font-Weight: bold;
+}
+.imagem{
+    
+        background-Image: url(https://i.imgur.com/C15X08E.jpg);
+        background-Repeat: no-repeat; 
+        width: 100vh; 
+        min-Height: 100vh; 
+        background-Size: cover;
+        background-Position: center;
+}

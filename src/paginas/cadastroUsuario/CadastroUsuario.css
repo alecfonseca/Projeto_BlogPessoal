@@ -1,0 +1,15 @@
+.imagem2{
+    
+    background-Image: url(https://i.imgur.com/C15X08E.jpg);
+    background-Repeat: no-repeat; 
+    width: 100vh; 
+    min-Height: 100vh; 
+    background-Size: cover;
+    background-Position: center;
+}
+.texto2{
+    font-weight: bold !important;
+}
+.btnCancelar{
+    margin-right: 20px !important;
+}

@@ -1,0 +1,18 @@
+.cursor{
+    cursor: pointer;
+    color: rgb(11, 10, 10);
+}
+
+.text-decoreted-none{
+    
+    text-decoration:none ;
+
+}
+
+.logo{
+    margin-right: 10;
+}
+
+.menu{
+    background-color: #ffffff90 !important;
+}

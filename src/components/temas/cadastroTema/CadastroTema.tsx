@@ -1,7 +1,9 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Button, Container, TextField, Typography } from '@material-ui/core'
 import { useHistory, useParams } from 'react-router-dom'
-import useLocalStorage from 'react-use-localstorage'
+import { useSelector } from 'react-redux'
+import { TokenState } from '../../../store/tokens/TokensReducer'
+
 
 import { buscaId, post, put } from '../../../services/Sevice'
 import Tema from '../../../models/Tema'
@@ -14,7 +16,9 @@ function CadastroTema() {
 
     const { id } = useParams<{ id: string }>()
 
-    const [token, setToken] = useLocalStorage('token')
+    const token = useSelector<TokenState, TokenState['tokens']>(
+        (state) => state.tokens
+      );
 
     const [tema, setTema] = useState<Tema>({
         id: 0,
@@ -42,10 +46,11 @@ function CadastroTema() {
         })
     }
 
-    function updatedTema(e: ChangeEvent<HTMLInputElement>) {
+    function updatedModel(e: ChangeEvent<HTMLInputElement>) {
         setTema({
             ...tema,
-            [e.target.name]: e.target.value
+            [e.target.name]: e.target.value,
+            postagem: [{}]
         })
     }
 
@@ -65,13 +70,13 @@ function CadastroTema() {
 
                 alert('Tema atualizado com sucesso');
 
-            // CATCH: Caso tenha algum erro, pegue esse erro e mande uma msg para o usuário
+                // CATCH: Caso tenha algum erro, pegue esse erro e mande uma msg para o usuário
             } catch (error) {
                 console.log(`Error: ${error}`)
                 alert("Erro, por favor verifique a quantidade minima de caracteres")
             }
 
-        // Se o ID for indefinido, tente Cadastrar
+            // Se o ID for indefinido, tente Cadastrar
         } else {
 
             // TRY: Tenta executar o cadastro
@@ -81,16 +86,16 @@ function CadastroTema() {
                         'Authorization': token
                     }
                 })
-                
+
                 alert('Tema cadastrado com sucesso');
-            
-            // CATCH: Caso tenha algum erro, pegue esse erro e mande uma msg para o usuário
+
+                // CATCH: Caso tenha algum erro, pegue esse erro e mande uma msg para o usuário
             } catch (error) {
                 console.log(`Error: ${error}`)
                 alert("Erro, por favor verifique a quantidade minima de caracteres")
             }
         }
-        
+
         back()
     }
 
@@ -104,7 +109,7 @@ function CadastroTema() {
                 <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro tema</Typography>
                 <TextField
                     value={tema.descricao}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                     id="descricao"
                     label="descricao"
                     variant="outlined"

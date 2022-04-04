@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core'
 import { Link, useHistory } from 'react-router-dom'
-import useLocalStorage from 'react-use-localstorage'
+import { useSelector } from 'react-redux'
+import { TokenState } from '../../../store/tokens/TokensReducer'
 
 import Tema from '../../../models/Tema'
 import { busca } from '../../../services/Sevice'
 
 import './ListaTema.css'
+
 
 function ListaTema() {
 
@@ -14,7 +16,9 @@ function ListaTema() {
 
   const [temas, setTemas] = useState<Tema[]>([])
 
-  const [token, setToken] = useLocalStorage('token')
+  const token = useSelector<TokenState, TokenState['tokens']>(
+    (state) => state.tokens
+  );
 
   useEffect(() => {
     if (token === "") {

@@ -7,6 +7,7 @@ import Tema from '../../../models/Tema';
 import { buscaId, deleteId } from '../../../services/Sevice';
 
 import "./DeletarTema.css"
+import { toast } from 'react-toastify';
 
 
 function DeletarTema() {
@@ -23,9 +24,17 @@ function DeletarTema() {
 
     useEffect(() => {
         if (token === "") {
-            alert("Você precisa estar logado")
-            history.push("/login")
-
+            toast.error('Usúario precisa estar logado !',{
+                position:'top-right',
+                autoClose:2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined,
+            });
+                history.push("/login")
         }
     }, [token])
 
@@ -52,11 +61,28 @@ function DeletarTema() {
                     'Authorization': token
                 }
             });
-            
-            alert('Tema deletado com sucesso');
+            toast.success('Tema deletado com sucesso. !',{
+                position:'top-right',
+                autoClose:2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined,
+            });
             
         } catch (error) {
-            alert('Erro ao deletar');
+            toast.error('Erro ao deletar. !',{
+                position:'top-right',
+                autoClose:2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined,
+            });
         }
 
     }

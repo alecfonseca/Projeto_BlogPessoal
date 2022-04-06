@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import UserLogin from '../../models/UserLogin';
 import './Login.css';
 import { addToken } from '../../store/tokens/action';
+import { toast } from 'react-toastify';
 
 
 function Login() {
@@ -42,10 +43,28 @@ function Login() {
         e.preventDefault();
         try {
             await login(`/usuarios/logar`, userLogin, setToken)
+            toast.success('Usuário logado com sucesso. !',{
+                position:'top-right',
+                autoClose:2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined,
+            });
 
-            alert('Usuário logado com sucesso!');
         } catch (error) {
-            alert('Dados do usuário inconsistentes. Erro ao logar!');
+            toast.error('EDados do usuário inconsistentes. Erro ao logar. !',{
+                position:'top-right',
+                autoClose:2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined,
+            });
         }
     }
 
@@ -67,7 +86,7 @@ function Login() {
                         <Box marginRight={1}>
                             <Typography variant='subtitle1' gutterBottom align='center'>Não tem uma conta?</Typography>
                         </Box>
-                        <Link to='/cadastrousuario'>
+                        <Link to='/cadastro'>
                             <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
                         </Link>
 

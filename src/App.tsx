@@ -14,7 +14,8 @@ import CadastroTema from './components/temas/cadastroTema/CadastroTema';
 import DeletarTema from './components/temas/deletarTema/DeletarTema';
 import { Provider } from 'react-redux';
 import store from './store/store';
-
+import 'react-toastify/dist/reactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 
 
@@ -22,6 +23,7 @@ import store from './store/store';
 function App() {
   return (
     <Provider store={store}>
+      <ToastContainer />
       <Router>
       <Navbar />
       <Switch>

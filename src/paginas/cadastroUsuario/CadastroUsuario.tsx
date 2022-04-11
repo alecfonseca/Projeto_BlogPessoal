@@ -93,7 +93,7 @@ function CadastroUsuario() {
 
                         <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                             id='usuario'
-                            label='usuario'
+                            label='Email'
                             variant='outlined'
                             name='usuario'
                             margin='normal'
@@ -123,11 +123,9 @@ function CadastroUsuario() {
                                     Cancelar
                                 </Button>
                             </Link >
-                            <Link to ='/login' className='text-decorator-none'>
                             <Button type='submit' variant='contained' color='primary'>
                                 Cadastrar
                             </Button>
-                            </Link>
                         </Box>
                     </form>
                 </Box>

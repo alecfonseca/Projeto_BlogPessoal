@@ -31,7 +31,7 @@ import { toast} from 'react-toastify';
     }
 
     var navbarComponent;
-    if(token!=""){
+    if(token !=""){
         navbarComponent = <AppBar position="static" className="menu">
         <Toolbar variant="dense">
             <Box className="cursor" >
@@ -70,6 +70,14 @@ import { toast} from 'react-toastify';
                     <Box mx={1} className="cursor" >
                         <Typography variant="h6" color="inherit">
                             Cadastrar Temas
+                        </Typography>
+                    </Box>
+                </Link>
+
+                <Link to='/formularioPostagem' className ="text-decorator-none">
+                    <Box mx={1} className="cursor" >
+                        <Typography variant="h6" color="inherit">
+                            Cadastrar Postagens
                         </Typography>
                     </Box>
                 </Link>

@@ -1,6 +1,6 @@
 .imagem2{
     
-    background-Image: url(https://i.imgur.com/939F0zq.jpeg);
+    background-Image: url(../../../public/historia-da-musica.jpg);
     background-Repeat: no-repeat; 
     width: 100vh; 
     min-Height: 100vh; 
@@ -12,4 +12,7 @@
 }
 .btnCancelar{
     margin-right: 20px !important;
+}
+.fundo1{
+    background-image:linear-gradient(to right, rgb(250, 40, 208), rgb(150, 47, 246));
 }

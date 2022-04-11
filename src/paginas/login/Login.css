@@ -2,14 +2,18 @@
     text-decoration:none;
 }
 .texto2{
-    font-Weight: bold;
+    font-Weight: bold !important;
+    font-size: 50px !important;
 }
 .imagem{
-    background-image: url("C:\Users\Dell\Desktop\Front_blogpessoal\blog-pessoal\public\Image-home.gif");
+    background-image: url(../../../public/musica.webp.png);
     background-repeat: no-repeat; 
     width: 100vw; 
-    height: 100vh; 
-    display: flex;
+    height: 100vh;
     background-size:cover;
-    /* background-position: 100%; */
+}
+.fundo{
+    background-image:linear-gradient(to right, rgb(145, 3, 136), rgb(146, 59, 228));
+    width: 100vw;
+    height: 100vh;
 }

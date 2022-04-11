@@ -1,21 +1,29 @@
-.caixa{
-    background-color: #3f51b5;
-}
+
 
 .titulo{
-    color: white !important; 
+    background-image:linear-gradient(to right, rgb(122, 10, 153), rgb(9, 92, 165)); 
     font-weight:'bold'!important;
 }
 
 .botao{
-    border-color: white!important;
+    background-image:linear-gradient(to right, rgb(177, 76, 3), rgb(196, 2, 2)) !important;
     background-color: #3F51B5; 
     color: white!important;
 }
 
 .postagens{
-    background-color: white;
+    background-image:linear-gradient(to right, rgb(30, 11, 128), rgb(171, 18, 4));
 }
 .text-decoreted-none{
     text-decoration:none;
+}
+.fundo2{
+    background-image:linear-gradient(to right, rgb(30, 11, 128), rgb(240, 29, 10));
+}
+.imagem1{
+    background-image: url(../../../public/mesadj.png);
+    background-repeat: no-repeat; 
+    width: 100vw; 
+    height: 100vh;
+    background-size:cover;
 }

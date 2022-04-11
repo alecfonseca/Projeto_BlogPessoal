@@ -34,6 +34,7 @@ function Login() {
 
     useEffect(() => {
         if (token != '') {
+            console.log(token)
             dispatch(addToken(token));
             history.push('/home')
         }
@@ -69,9 +70,9 @@ function Login() {
     }
 
     return (
-        <Grid container direction='row' justifyContent='center' alignItems='center' >
-            <Grid alignItems='center' xs={6}>
-                <Box paddingX={20}>
+        <Grid container direction='row' justifyContent='center' alignItems='center' className='fundo'>
+            <Grid alignItems='center' xs={6} >
+                <Box paddingX={20} >
                     <form onSubmit={onSubmit}>
                         <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos1'>Entrar</Typography>
                         <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuário' variant='outlined' name='usuario' margin='normal' fullWidth />
@@ -86,8 +87,8 @@ function Login() {
                         <Box marginRight={1}>
                             <Typography variant='subtitle1' gutterBottom align='center'>Não tem uma conta?</Typography>
                         </Box>
-                        <Link to='/cadastro'>
-                            <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
+                        <Link to='/cadastro' className='textos2' >
+                            <Typography variant='subtitle1' gutterBottom align='center' className='textos2'>Cadastre-se</Typography>
                         </Link>
 
                     </Box>

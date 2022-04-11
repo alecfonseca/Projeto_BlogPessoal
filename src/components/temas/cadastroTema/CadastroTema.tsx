@@ -27,7 +27,7 @@ function CadastroTema() {
     })
 
     useEffect(() => {
-        if (token === "") {
+        if (token == "") {
             toast.error('Usúario precisa estar logado !',{
                 position:'top-right',
                 autoClose:2000,
